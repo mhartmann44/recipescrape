@@ -11,27 +11,6 @@ driver.get("https://www.bbc.co.uk/food/collections/affordable_30-minute_meals_fo
 time.sleep(2)
 # finding the button using ID
 
-#less ideal way
-#driver.find_element(By.XPATH,"//button[@title='Accept All']").click()
-#link = browser.find_element(By.LINK_TEXT,"Pasta alla vodka")
-
-#wait definition
-wait = WebDriverWait(driver, 3)
-
-#get rid of ad
-#driver.switch_to.frame("sp_message_iframe_1109708")
-#wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@title='Accept All']"))).click()
-#time.sleep(5)
-
-#scroll and find recipe link name
-#driver.execute_script("window.scrollTo(0, 1000)")
-#element = driver.find_element(By.XPATH, "//h3[text()='Mary Berry's Bakewell Tart']")
-#print(element.text)
-
-#click on recipe link
-#wait.until(EC.element_to_be_clickable((By.LINK_TEXT, "Mary Berry's Bakewell Tart"))).click()
-#time.sleep(5)
-
 #find list of all links
 links = driver.find_elements(By.TAG_NAME, 'a')
 link_list = []
