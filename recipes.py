@@ -31,7 +31,7 @@ link_list = []
 for i in links:
     link_list.append(i.text)
 link_list = list(filter(None, link_list))
-link_list = link_list[30:34]  #for quick testing use this
+link_list = link_list[30:40]  #for quick testing use this
 #link_list = link_list[30:] #for full list
 
 
@@ -78,14 +78,14 @@ for recipe in link_list:
     #driver.navigate().back() #less reliable way for back button
     driver.execute_script("window.history.go(-1)")
     time.sleep(2)
-print(total_list)
+#print(total_list)
 
 # train word2vec model
-model = (Word2Vec(total_list, min_count=1, vector_size = 3))
-print(model)
+model = (Word2Vec(total_list, min_count=1, vector_size = 5))
+#print(model)
 
 # find similar words
-sims = model.wv.most_similar('kale', topn=10)
+sims = model.wv.most_similar('paprika', topn=10)
 print(sims)
 
 #close browser
